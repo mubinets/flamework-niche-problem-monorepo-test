@@ -1,0 +1,27 @@
+{
+  "name": "local-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "root:once": "rbxtsc -p ./projects/root",
+    "root:serve": "rojo serve ./projects/root",
+    "root:watch": "rbxtsc -w -p ./projects/root",
+    "root:start": "bun run root:once && concurrently \"bun run root:watch\" \"bun run root:serve\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@rbxts/compiler-types": "github:roblox-ts/compiler-types#master",
+    "@rbxts/types": "^1.0.955",
+    "concurrently": "^10.0.5",
+    "roblox-ts": "^3.0.0-dev-3106b14",
+    "typescript": "=5.9.3"
+  },
+  "dependencies": {
+    "@flamework/core": "^1.3.2",
+    "rbxts-transformer-flamework": "github:mubinets/transformer"
+  }
+}
